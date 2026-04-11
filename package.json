@@ -1,0 +1,22 @@
+{
+  "name": "@librecode/i18n",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Internationalization strings for LibreCode",
+  "exports": {
+    "./app": "./src/app/index.ts",
+    "./app/*": "./src/app/*.ts",
+    "./ui": "./src/ui/index.ts",
+    "./ui/*": "./src/ui/*.ts",
+    "./desktop": "./src/desktop/index.ts",
+    "./desktop/*": "./src/desktop/*.ts"
+  },
+  "files": ["src"],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}
