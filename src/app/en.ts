@@ -510,6 +510,8 @@ export const dict = {
   "session.tab.session": "Session",
   "session.tab.review": "Review",
   "session.tab.context": "Context",
+  "session.tab.apps": "Apps",
+  "session.tab.activity": "Activity",
   "session.panel.reviewAndFiles": "Review and files",
   "session.review.filesChanged": "{{count}} Files Changed",
   "session.review.change.one": "Change",
@@ -582,6 +584,9 @@ export const dict = {
   "session.header.open.app.androidStudio": "Android Studio",
   "session.header.open.app.powershell": "PowerShell",
   "session.header.open.app.sublimeText": "Sublime Text",
+
+  "session.streaming.thinking": "thinking",
+  "session.streaming.toolUse": "using tool",
 
   "status.popover.trigger": "Status",
   "status.popover.ariaLabel": "Server configurations",
