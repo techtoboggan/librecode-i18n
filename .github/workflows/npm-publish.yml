@@ -25,6 +25,9 @@ jobs:
           # overrides OIDC. With just permissions: id-token: write, npm detects
           # the GitHub Actions OIDC token automatically.
 
+      - name: Upgrade npm to 11+ (OIDC trusted publishing requires 11.5.1+)
+        run: npm install -g npm@latest
+
       - name: Prepare package.json
         run: |
           node -e "
