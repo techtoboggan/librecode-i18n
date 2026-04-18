@@ -1,5 +1,7 @@
 name: Publish npm package
 
+# Publishes @librecode/i18n via OIDC trusted publishing.
+# Fires automatically on tag push — no token needed.
 on:
   push:
     tags: ["v*"]
@@ -7,7 +9,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write
+  id-token: write # required for npm OIDC trusted publishing
 
 jobs:
   publish:
@@ -21,7 +23,7 @@ jobs:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Prepare package.json for publish
+      - name: Prepare package.json
         run: |
           node -e "
           const pkg = JSON.parse(require('fs').readFileSync('package.json', 'utf8'));
@@ -33,7 +35,11 @@ jobs:
           console.log('Publishing @librecode/i18n@' + version);
           "
 
-      - name: Publish
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish (OIDC — no token)
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if npm view "@librecode/i18n@$VERSION" version 2>/dev/null; then
+            echo "@librecode/i18n@$VERSION already published, skipping"
+          else
+            npm publish --access public --provenance
+          fi
