@@ -21,7 +21,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          registry-url: "https://registry.npmjs.org"
+          # NO registry-url — that writes an .npmrc with NODE_AUTH_TOKEN which
+          # overrides OIDC. With just permissions: id-token: write, npm detects
+          # the GitHub Actions OIDC token automatically.
 
       - name: Prepare package.json
         run: |
