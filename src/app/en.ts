@@ -511,7 +511,7 @@ export const dict = {
   "session.tab.review": "Review",
   "session.tab.context": "Context",
   "session.tab.apps": "Apps",
-  "session.tab.activity": "Activity",
+  "session.tab.activity": "Timeline",
   "session.panel.reviewAndFiles": "Review and files",
   "session.review.filesChanged": "{{count}} Files Changed",
   "session.review.change.one": "Change",

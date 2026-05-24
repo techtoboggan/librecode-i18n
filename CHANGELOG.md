@@ -2,6 +2,14 @@
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · [SemVer](https://semver.org/).
 
+## [0.9.33] — 2026-05-25
+
+### Changed
+
+- **`session.tab.activity` value**: `"Activity"` → `"Timeline"`. The
+  internal tab identifier is unchanged; only the user-facing label
+  moves. Pairs with main-repo Phase 46.
+
 ## [1.0.0-preview.1] — 2026-04-15
 
 Aligns with LibreCode main repo v1.0.0-preview.1.
